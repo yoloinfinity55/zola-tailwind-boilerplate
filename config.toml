@@ -1,4 +1,4 @@
-base_url = "http://localhost:1111"
+base_url = "https://yoloinfinity55.github.io/zola-tailwind-boilerplate/"
 title = "My Zola Tailwind Theme"
 compile_sass = false
 build_search_index = true
