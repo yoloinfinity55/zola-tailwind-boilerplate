@@ -33,8 +33,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Tailwind CSS
-        run: npm install -D tailwindcss
+      - name: Install Tailwind CSS CLI
+        run: npm install -D @tailwindcss/cli
 
       - name: Build TailwindCSS
         run: ./node_modules/.bin/tailwindcss -i ./static/input.css -o ./static/style.css --minify
