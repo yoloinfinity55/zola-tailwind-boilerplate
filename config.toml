@@ -1,0 +1,11 @@
+base_url = "http://localhost:1111"
+title = "My Zola Tailwind Theme"
+compile_sass = false
+build_search_index = true
+
+taxonomies = [
+  { name = "tags", paginate_by = 5, rss = true },
+  { name = "categories", paginate_by = 5, rss = true },
+  { name = "authors", paginate_by = 5, rss = true },
+  { name = "series", paginate_by = 10 }
+]
