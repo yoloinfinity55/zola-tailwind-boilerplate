@@ -2,6 +2,7 @@ base_url = "https://yoloinfinity55.github.io/zola-tailwind-boilerplate/"
 title = "My Zola Tailwind Theme"
 compile_sass = false
 build_search_index = true
+relative_urls = true
 
 taxonomies = [
   { name = "tags", paginate_by = 5, rss = true },
