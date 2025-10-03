@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="text-xl font-bold mb-4">Latest Posts</h2>
+<ul>
+{% set blog = get_section(path="blog/_index.md") %}
+{% for page in blog.pages %}
+<li class="mb-2"><a class="text-blue-500 hover:underline" href="{{ page.permalink }}">{{ page.title }}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}

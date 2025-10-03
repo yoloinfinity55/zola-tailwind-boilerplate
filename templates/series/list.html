@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="text-3xl font-bold mb-6">Series</h1>
+<div class="grid gap-6">
+{% for term in terms %}
+<a href="{{ term.permalink }}" class="block p-4 rounded shadow hover:bg-gray-50 dark:hover:bg-gray-800">
+<h2 class="text-xl font-semibold">{{ term.name }}</h2>
+<p class="text-sm text-gray-500 dark:text-gray-400">{{ term.pages | length }} posts</p>
+</a>
+{% endfor %}
+</div>
+{% endblock %}

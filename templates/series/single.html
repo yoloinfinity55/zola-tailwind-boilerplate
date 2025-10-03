@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="text-3xl font-bold mb-6">Series: {{ term.name }}</h1>
+<ol class="list-decimal list-inside space-y-3">
+{% for page in term.pages | sort(attribute="date") %}
+<li><a href="{{ page.permalink }}" class="hover:underline">{{ page.title }}</a> <span class="text-sm text-gray-500 dark:text-gray-400">({{ page.date | date(format="%B %d, %Y") }})</span></li>
+{% endfor %}
+</ol>
+{% endblock %}

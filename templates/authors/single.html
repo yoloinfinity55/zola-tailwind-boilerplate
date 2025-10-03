@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+{% set author_slug = term.name | slugify %}
+
+<div class="mb-8 flex items-center gap-4">
+{% if bio_page and bio_page.extra.avatar %}
+<img src="{{ bio_page.extra.avatar }}" alt="{{ term.name }}" class="w-16 h-16 rounded-full">
+{% endif %}
+<div>
+<h1 class="text-3xl font-bold">{{ term.name }}</h1>
+{% if bio_page and bio_page.extra.bio %}<p class="text-gray-600 dark:text-gray-400">{{ bio_page.extra.bio }}</p>{% endif %}
+</div>
+</div>
+<h2 class="text-2xl font-semibold mb-4">Posts by {{ term.name }}</h2>
+<div class="space-y-6">
+{% for page in term.pages %}
+<article class="post-item border-b pb-4">
+<h3 class="text-xl font-semibold"><a href="{{ page.permalink }}" class="hover:underline">{{ page.title }}</a></h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">{{ page.date | date(format="%B %d, %Y") }}</p>
+<p>{{ page.summary | safe }}</p>
+</article>
+{% endfor %}
+</div>
+{% endblock %}
