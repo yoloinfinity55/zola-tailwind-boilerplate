@@ -33,8 +33,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install Tailwind CSS
+        run: npm install -D tailwindcss
+
       - name: Build TailwindCSS
-        run: npm run build  # Adjust script name if needed (e.g., 'build-css')
+        run: npx tailwindcss -i ./static/input.css -o ./static/style.css --minify
 
       - name: Install Zola
         uses: taiki-e/install-action@v2
